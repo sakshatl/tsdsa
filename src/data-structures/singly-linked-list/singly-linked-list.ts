@@ -58,6 +58,23 @@ export class SinglyLinkedList<T> {
 
     return current;
   }
+
+  // get a node in the linked list at an 'index'
+  get(index: number) : ListNode<T> | undefined | null {
+    if (!this.head || !this.tail) return undefined;
+    if (index < 0 || index >= this.length) return undefined;
+  
+    let currentIndex = 0;
+    let current: ListNode<T> | null = this.head;
+
+    while (currentIndex < index) {
+      current = current && current.next;
+      currentIndex = currentIndex + 1;
+    }
+
+    return current;
+  }
+
 }
 
 function main() {
@@ -70,13 +87,18 @@ function main() {
   list.push(node1);
   list.push(node2);
   list.push(node3);
+  list.push(40);
+  list.push(50);
 
-  console.log(list);
 
-  console.log(list.pop());
-  console.log(list.pop());
 
-  console.log(list)
+  // console.log(list.get(1), "1");
+  // console.log(list.get(2), "2");
+  // console.log(list.get(4), "4");
+  // console.log(list.get(5), "5");
+  // console.log(list.get(-1), "-1");
+
+
 }
 
 main();
