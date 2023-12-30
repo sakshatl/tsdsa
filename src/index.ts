@@ -1,9 +1,12 @@
 // === DATA STRUCTURES ===========
 
 // == LINKED LISTS ==
-import './data-structures/singly-linked-list/singly-linked-list';
+// import './data-structures/linked-list/singly-linked-list/singly-linked-list';
 
 // == HASH MAP ==
+
+// == BINARY SEARCH TREE ==
+import './data-structures/binary-search-tree/binary-search-tree';
 
 
 
