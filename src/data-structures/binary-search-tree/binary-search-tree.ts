@@ -1,3 +1,5 @@
+export { };
+
 class TreeNode<T> {
   data: T;
   left: TreeNode<T> | null;
@@ -76,6 +78,64 @@ class BinarySearchTree<T> {
     return found;
   }
 
+  // Breadth First Search
+  BFS() {
+    if (!this.root) return [];
+
+    let result: TreeNode<T>[] = [];
+    let queue: TreeNode<T>[] = [];
+
+    queue.push(this.root);
+
+    while (queue.length) {
+      let node = queue.shift();
+
+      if(node) {
+        result.push(node);
+      }
+
+      if(node?.left) queue.push(node.left);
+      if(node?.right) queue.push(node.right);
+    }
+
+    return result;
+  }
+
+  DFSPreOder() {
+    if (!this.root) return [];
+
+    let result: TreeNode<T>[] = [];
+    let current = this.root;
+
+    function traverse(node: TreeNode<T>) {
+      result.push(node);
+      if (node?.left) traverse(node.left);
+      if (node?.right) traverse(node.right);
+    }
+    traverse(current);
+
+    // return result;
+    return result.map((item) => item.data);
+  }
+
+  DFSPostOrder() {
+    if (!this.root) return [];
+
+    let result: TreeNode<T>[] = [];
+    let current = this.root;
+
+    function traverse(node: TreeNode<T>) {
+      if (node?.left) traverse(node.left);
+      if (node?.right) traverse(node.right);
+      result.push(node);
+    }
+
+    traverse(current);
+    
+    // return result;
+    return result.map((item) => item.data);
+
+  }
 }
 
 function main() {
@@ -89,6 +149,9 @@ function main() {
   console.log(tree.exists(10)); // true
   console.log(tree.exists(7)); // true
   console.log(tree.exists(17)); // false
+
+  console.log(tree.DFSPreOder());
+  console.log(tree.DFSPostOrder());
 }
 
 main();

@@ -6,7 +6,10 @@
 // == HASH MAP ==
 
 // == BINARY SEARCH TREE ==
-import './data-structures/binary-search-tree/binary-search-tree';
+// import './data-structures/binary-search-tree/binary-search-tree';
+
+// == BINARY HEAP ==
+import './data-structures/heaps/max-binary-heap';
 
 
 
