@@ -20,4 +20,24 @@ class CircularLinkedList<T> {
     this.tail = null;
     this.length = 0;
   }
+
+  push(data: T) {
+    const newNode = new ListNode(data);
+
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+      newNode.next = this.head; // point back to head for circularity
+    } else {
+      if (this.tail) {
+        this.tail.next = newNode;
+        this.tail = newNode;
+        newNode.next = this.head; // point back to head for circularity
+      }
+    }
+
+    this.length = this.length + 1;
+    return true;
+  }
+
 }

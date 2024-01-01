@@ -142,7 +142,7 @@ function main() {
   list.push(40);
   list.push(50);
 
-  console.log(list.print())
+  // console.log(list.print());
 
   // console.log(list.get(1), "1");
   // console.log(list.get(2), "2");
@@ -154,15 +154,15 @@ function main() {
   list.unshift(200);
 
 
-  console.log(list.print());
+  // console.log(list.print());
 
   const removed1 = list.shift();
   const removed2 = list.shift();
 
-  console.log(removed1);
-  console.log(removed2);
+  // console.log(removed1);
+  // console.log(removed2);
 
-  console.log(list.print())
+  // console.log(list.print());
 }
 
 main();

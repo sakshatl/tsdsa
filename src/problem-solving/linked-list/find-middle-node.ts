@@ -8,7 +8,7 @@
   - Use two pointers (fast and slow), one moving at twice the speed of the other, to find the middle element efficiently.
 */
 
-import { ListNode, SinglyLinkedList } from "../../data-structures/singly-linked-list/singly-linked-list";
+import { ListNode, SinglyLinkedList } from "../../data-structures/linked-list/singly-linked-list/singly-linked-list";
 
 function findMiddle(list: SinglyLinkedList<number>) : ListNode<number> | null {
   const head = list.head;
