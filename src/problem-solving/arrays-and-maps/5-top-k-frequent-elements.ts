@@ -1,3 +1,5 @@
+export { };
+
 function topKFrequent(nums: number[], k: number): number[] {
   let map = new Map();
   
